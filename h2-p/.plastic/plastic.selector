@@ -1,4 +1,0 @@
-repository "h2-p@miles1017@cloud"
-  path "/"
-    br "/main"
-    co "/main"
