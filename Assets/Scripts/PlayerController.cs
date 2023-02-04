@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform movePoint;
 
     public LayerMask whatStopsMovement;
+    public LayerMask pickupLayer;
 
     public Animator anim;
 
