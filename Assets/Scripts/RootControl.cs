@@ -22,5 +22,6 @@ public class RootControl : MonoBehaviour
         Robot.moveSpeed = 0f;
         yield return new WaitForSecondsRealtime(5);
         Robot.moveSpeed = robotSpeed;
+        Destroy(this.gameObject);
     }
 }
