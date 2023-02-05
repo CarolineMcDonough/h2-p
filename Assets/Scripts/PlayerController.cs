@@ -6,11 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Transform movePoint;
+    Transform cur;
 
     public LayerMask whatStopsMovement;
     public LayerMask pickupLayer;
 
     public Animator anim;
+
+    public int seed;
+    public GameObject root;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+
+        if (seed > 0 && Input.GetKeyDown("l"))
+        {
+            Spawn();
+            seed -= 1;
+        }
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
         {
@@ -50,5 +60,10 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("moving", true);
         }
+    }
+
+    void Spawn()
+    {
+        Instantiate(root, movePoint.position, Quaternion.identity);
     }
 }

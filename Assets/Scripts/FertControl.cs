@@ -8,7 +8,7 @@ public class FertControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Player.seed += 1;
+        Player.seed += 1;
         Destroy(this.gameObject);
     }
 }
